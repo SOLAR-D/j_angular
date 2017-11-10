@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>-->
+    <script src="module/app.js" charset="utf-8"></script>
+    <script src="controller/todo.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+<h1>HOIHOI</h1>
+<div ng-app="todo" ng-controller="todo_controller">
+  <h2>투두목록</h2>
+
+  <ul class="list-unstyled">
+    <li ng-repeat="todo in todos">
+      <div class="input-group">
+        <span class="input-group-addon">
+          <input type="checkbox" ng-model="todo.completed">
+        </span>
+        <input type="text" name="" value="" class="form-control" ng-model="todo.title">
+        <span class="input-group-btn">
+          <button type="button" name="button" class="btn btn-danger" ng-click="remove(todo)">삭제</button>
+        </span>
+      </div>
+      <div class="todo-date">{{todo.createAt | date:"yyyy-MM-dd HH:mm:ss"}}</div>
+    </li>
+  </ul>
+
+</div>
+
+
+  </body>
+</html>
