@@ -20,11 +20,13 @@ app.controller("todo_controller", function($scope){
   ];
 
   $scope.remove = function(todo) {
-    var idx = $scope.todos.fineIndex(function(item) {
-      return item.id === todo.id;
+    // find todo.hashKey equal item.hashKey
+    var idx = $scope.todos.findIndex(function(item) {
+      return item.$$hashKey === todo.$$hashKey;
     });
-
+    // find item index > -1
     if (idx > -1 ) {
+      // find item index remove
       $scope.todos.splice(idx, 1);
     }
   };

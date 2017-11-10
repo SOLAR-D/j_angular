@@ -17,7 +17,7 @@
   <h2>투두목록</h2>
 
   <ul class="list-unstyled">
-    <li ng-repeat="todo in todos">
+    <li ng-repeat="todo in todos | filter:todo_filter">
       <div class="input-group">
         <span class="input-group-addon">
           <input type="checkbox" ng-model="todo.completed">
@@ -30,6 +30,11 @@
       <div class="todo-date">{{todo.createAt | date:"yyyy-MM-dd HH:mm:ss"}}</div>
     </li>
   </ul>
+  <div class="list-button">
+    <button type="button" name="button" class="btn btn-primary" ng-click="todo_filter={completed:true}">Completed</button>
+    <button type="button" name="button" class="btn btn-primary" ng-click="todo_filter={completed:false}">Active</button>
+    <button type="button" name="button" class="btn btn-primary" ng-click="todo_filter={}">ALL</button>
+  </div>
 
 </div>
 
