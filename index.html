@@ -16,6 +16,15 @@
 <div ng-app="todo" ng-controller="todo_controller">
   <h2>투두목록</h2>
 
+  <form class="" method="post" name="todo_form" ng-submit="add(newTodoTitle)">
+      <div class="input-group">
+        <input type="text" name="" class="form-control" value="" ng-model="newTodoTitle">
+        <div class="input-group-btn">
+            <button type="submit" name="button" class="btn btn-success">Add</button>
+        </div>
+      </div>
+  </form>
+  <br>
   <ul class="list-unstyled">
     <li ng-repeat="todo in todos | filter:todo_filter">
       <div class="input-group">
@@ -24,7 +33,7 @@
         </span>
         <input type="text" name="" value="" class="form-control" ng-model="todo.title">
         <span class="input-group-btn">
-          <button type="button" name="button" class="btn btn-danger" ng-click="remove(todo)">삭제</button>
+          <button type="button" name="button" class="btn btn-danger" ng-click="remove(todo)">remove</button>
         </span>
       </div>
       <div class="todo-date">{{todo.createAt | date:"yyyy-MM-dd HH:mm:ss"}}</div>

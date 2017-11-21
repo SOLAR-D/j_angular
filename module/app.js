@@ -31,4 +31,18 @@ app.controller("todo_controller", function($scope){
     }
   };
 
+  $scope.add = function(newTodoTitle) {
+    // create todo
+    var todo = {
+      title: newTodoTitle,
+      completed: false,
+      createAt: Date.now()
+    }
+    // todo list add
+    $scope.todos.push(todo);
+
+    // empty input tag
+    $scope.newTodoTitle = "";
+  };
+
 });
